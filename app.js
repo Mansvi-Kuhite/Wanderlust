@@ -23,7 +23,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.MONGODB_URI;
 
 main()
 .then(() => {
@@ -32,6 +32,9 @@ main()
 .catch((err) => {
     console.log(err);
 }); 
+
+console.log("MONGO URI EXISTS:", !!process.env.MONGODB_URI);
+
 
 async function main(){ 
     await mongoose.connect(dbUrl);
