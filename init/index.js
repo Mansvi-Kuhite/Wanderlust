@@ -13,6 +13,8 @@ main()
     console.log(err);
  }); 
 
+ console.log("MONGO URI EXISTS:", !!process.env.MONGODB_URI);
+
 async function main() {
     await mongoose.connect(MONGO_URL);
 }
